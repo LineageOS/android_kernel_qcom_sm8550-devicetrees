@@ -28,18 +28,11 @@
 
 
 	chosen: chosen {
-			bootargs = "console=ttyMSM0,115200n8 loglevel=6 kpti=0 log_buf_len=256K kernel.panic_on_rcu_stall=1 service_locator.enable=1 msm_rtb.filter=0x237 rcupdate.rcu_expedited=1 rcu_nocbs=0-7 ftrace_dump_on_oops swiotlb=noforce loop.max_part=7 fw_devlink.strict=1 allow_mismatched_32bit_el0 cpufreq.default_governor=performance printk.console_no_auto_verbose=1 kasan=off sysctl.kernel.sched_pelt_multiplier=4 can.stats_timer=0 pcie_ports=compat irqaffinity=0-2 disable_dma32=on no-steal-acc cgroup.memory=nokmem,nosocket slub_debug=-";
+			bootargs = "console=ttyMSM0,115200n8 loglevel=6 kpti=0 log_buf_len=256K kernel.panic_on_rcu_stall=1 service_locator.enable=1 msm_rtb.filter=0x237 rcupdate.rcu_expedited=1 rcu_nocbs=0-7 ftrace_dump_on_oops swiotlb=noforce loop.max_part=7 fw_devlink.strict=1 allow_mismatched_32bit_el0 cpufreq.default_governor=performance printk.console_no_auto_verbose=1 kasan=off sysctl.kernel.sched_pelt_multiplier=4 can.stats_timer=0 pcie_ports=compat irqaffinity=0-2 disable_dma32=on no-steal-acc cgroup.memory=nokmem,nosocket";
 			stdout-path = "/soc/qcom,qupv3_1_geni_se@ac0000/qcom,qup_uart@a9c000";
 	};
 
 	reserved_memory: reserved-memory { };
-
-	mem-offline {
-		compatible = "qcom,mem-offline";
-		offline-sizes = <0x2 0xc0000000 0x1 0x00000000>;
-		granule = <512>;
-		mboxes = <&qmp_aop 0>;
-	};
 
 	aliases: aliases {
 		serial0 = &qupv3_se7_2uart;
@@ -474,7 +467,7 @@
 
 	adspslpi_mem: adspslpi_region@9ea00000 {
 		no-map;
-		reg = <0x0 0x9ea00000 0x0 0x4080000>;
+		reg = <0x0 0x9ea00000 0x0 0x4880000>;
 	};
 
 	/* uefi region can be reused by apps */
@@ -649,7 +642,7 @@
 		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
 		reusable;
 		alignment = <0x0 0x400000>;
-		size = <0x0 0x1000000>;
+		size = <0x0 0x1400000>;
 	};
 
 	qmc_dma_mem: qmc_dma_region {
@@ -663,8 +656,9 @@
 	ramoops_mem: ramoops_region {
 		compatible = "ramoops";
 		alloc-ranges = <0x0 0x00000000 0xffffffff 0xffffffff>;
-		size = <0x0 0x200000>;
+		size = <0x0 0x240000>;
 		pmsg-size = <0x200000>;
+		console-size = <0x40000>;
 		mem-type = <2>;
 	};
 
@@ -706,9 +700,6 @@
 	#size-cells = <1>;
 	ranges = <0 0 0 0xffffffff>;
 	compatible = "simple-bus";
-
-	disp_rdump_region@b8000000 {
-	};
 
 	dsi_pll_codes {
 	};
@@ -2988,6 +2979,8 @@
 		qcom,vmid = <50>;
 		qcom,firmware-name = "cpusys_vm";
 		memory-region = <&cpusys_vm_mem>;
+		ext-region = <&chipinfo_mem>;
+		ext-label = <0x7>;
 	};
 
 	llcc_pmu: llcc-pmu@24095000 {
@@ -3359,9 +3352,7 @@
 
 	qcom_qbt: qcom,qbt_handler {
 		compatible = "qcom,qbt-handler";
-		qcom,ipc-gpio = <&tlmm 40 0>;
 		qcom,finger-detect-gpio = <&tlmm 41 0>;
-		qcom,intr2-gpio = <&tlmm 42 0>;
 	};
 
 	spmi_bus: spmi0_bus: qcom,spmi@c42d000 {
