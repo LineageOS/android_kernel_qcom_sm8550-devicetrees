@@ -59,7 +59,8 @@ KALAMA_BOARDS += \
 		 kalama-sg-hhg-overlay.dtbo \
 		 kalamap-hdk-overlay.dtbo \
 		 kalamap-sg-hhg-overlay.dtbo \
-		 kalamap-rb5-gen2-overlay.dtbo
+		 kalamap-rb5-gen2-overlay.dtbo \
+		 kalamap-aim300-overlay.dtbo
 
 NOAPQ_KALAMA_BOARDS += \
 		 kalama-rumi-overlay.dtbo \
@@ -92,7 +93,7 @@ kalama-dtb-$(CONFIG_ARCH_CROW) += \
 kalama-overlays-dtb-$(CONFIG_ARCH_CROW) += $(CROW_BOARDS) $(CROW_BASE_DTB)
 dtb-y += $(kalama-dtb-y)
 
-KHAJE_BASE_DTB += khaje.dtb khajep.dtb khajeq.dtb khajeg.dtb
+KHAJE_BASE_DTB += khaje.dtb khajep.dtb khajeq.dtb khajeg.dtb khaje-3gb.dtb
 
 KHAJE_BOARDS += \
                  khaje-idp-overlay.dtbo \
