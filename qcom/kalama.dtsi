@@ -34,13 +34,6 @@
 
 	reserved_memory: reserved-memory { };
 
-	mem-offline {
-		compatible = "qcom,mem-offline";
-		offline-sizes = <0x2 0xc0000000 0x1 0x00000000>;
-		granule = <512>;
-		mboxes = <&qmp_aop 0>;
-	};
-
 	aliases: aliases {
 		serial0 = &qupv3_se7_2uart;
 		hsuart0 = &qupv3_se14_4uart;
@@ -474,7 +467,7 @@
 
 	adspslpi_mem: adspslpi_region@9ea00000 {
 		no-map;
-		reg = <0x0 0x9ea00000 0x0 0x4080000>;
+		reg = <0x0 0x9ea00000 0x0 0x4880000>;
 	};
 
 	/* uefi region can be reused by apps */
@@ -649,7 +642,7 @@
 		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
 		reusable;
 		alignment = <0x0 0x400000>;
-		size = <0x0 0x1000000>;
+		size = <0x0 0x1400000>;
 	};
 
 	qmc_dma_mem: qmc_dma_region {
@@ -663,8 +656,9 @@
 	ramoops_mem: ramoops_region {
 		compatible = "ramoops";
 		alloc-ranges = <0x0 0x00000000 0xffffffff 0xffffffff>;
-		size = <0x0 0x200000>;
+		size = <0x0 0x240000>;
 		pmsg-size = <0x200000>;
+		console-size = <0x40000>;
 		mem-type = <2>;
 	};
 
@@ -2988,6 +2982,8 @@
 		qcom,vmid = <50>;
 		qcom,firmware-name = "cpusys_vm";
 		memory-region = <&cpusys_vm_mem>;
+		ext-region = <&chipinfo_mem>;
+		ext-label = <0x7>;
 	};
 
 	llcc_pmu: llcc-pmu@24095000 {
@@ -3359,9 +3355,7 @@
 
 	qcom_qbt: qcom,qbt_handler {
 		compatible = "qcom,qbt-handler";
-		qcom,ipc-gpio = <&tlmm 40 0>;
 		qcom,finger-detect-gpio = <&tlmm 41 0>;
-		qcom,intr2-gpio = <&tlmm 42 0>;
 	};
 
 	spmi_bus: spmi0_bus: qcom,spmi@c42d000 {
