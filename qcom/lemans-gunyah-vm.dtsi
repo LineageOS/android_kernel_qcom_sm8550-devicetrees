@@ -1,7 +1,6 @@
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/clock/qcom,gcc-lemans.h>
 #include <dt-bindings/arm/msm/qcom_dma_heap_dt_constants.h>
-#include <dt-bindings/clock/qcom,rpmh.h>
 
 / {
 	#address-cells = <0x2>;
@@ -135,6 +134,7 @@
 		vendor = "QTI";
 		image-name = "qcom,autoghgvm";
 		qcom,pasid = <0x0 0x2c>;
+		qcom,qtee-config-info = "p=3,57,77,78,7C,8F,97,159,199,47E,7F1;";
 		qcom,secdomain-ids = <52>;
 		qcom,primary-vm-index = <0>;
 		vm-attrs = "crash-fatal";
@@ -144,10 +144,12 @@
 		/* QUPv3 Tile 1 read-only region */
 		/* QUPv3 Tile 2 read-only region */
 		/* QUPv3 SE17 region */
+		/* QRNG region */
 		iomemory-ranges = <0x0 0xF000000 0x0 0xF000000 0x0 0x1000000 0x0
 				0x0 0xAC0000 0x0 0xAC0000 0x0 0x6000 0x1
 				0x0 0x8C0000 0x0 0x8C0000 0x0 0x6000 0x1
 				0x0 0x88C000 0x0 0x88C000 0x0 0x4000 0x0
+				0x0 0x10dc000 0x0 0x10dc000 0x0 0x1000 0x0
 				>;
 
 		/* Pass through IRQs */
@@ -158,10 +160,9 @@
 			#address-cells = <0x2>;
 			#size-cells = <0x0>;
 			/*
-			 * IPA address linux image is loaded at.
-			 */
-			base-address = <0x0 0xE0000000 >;
-			size-min = <0x0 0xC0000000>;    /* 3 GB */
+			* The IPA of the Guest regions is placed as IPA=PA.
+			*/
+			is-direct;
 		};
 
 		segments {
@@ -202,7 +203,7 @@
 				memory {
 					qcom,label = <0x10>;			/* misc.img */
 					#address-cells = <0x2>;
-					base = <0x0 0xd5100000>;
+					allocate-base;
 				};
 			};
 
@@ -217,7 +218,7 @@
 				memory {
 					qcom,label = <0x11>;			/* persist.img */
 					#address-cells = <0x2>;
-					base = <0x0 0xd5104000>;
+					allocate-base;
 				};
 			};
 
@@ -232,7 +233,7 @@
 				memory {
 					qcom,label = <0x15>;			/* metadate.img */
 					#address-cells = <0x2>;
-					base = <0x0 0xd5108000>;
+					allocate-base;
 				};
 			};
 
@@ -247,7 +248,7 @@
 				memory {
 					qcom,label = <0x16>;			/* userdata.img */
 					#address-cells = <0x2>;
-					base = <0x0 0xd510c000>;
+					allocate-base;
 				};
 			};
 
@@ -262,7 +263,7 @@
 				memory {
 					qcom,label = <0x17>;			/* super.img */
 					#address-cells = <0x2>;
-					base = <0x0 0xd5110000>;
+					allocate-base;
 				};
 			};
 
@@ -277,7 +278,7 @@
 				memory {
 					qcom,label = <0x13>;			/* Net device */
 					#address-cells = <0x2>;
-					base = <0x0 0xd5114000>;
+					allocate-base;
 				};
 			};
 
@@ -292,7 +293,7 @@
 				memory {
 					qcom,label = <0x14>;			/* HAB device 0 */
 					#address-cells = <0x2>;
-					base = <0x0 0xd5120000>;
+					allocate-base;
 				};
 			};
 
@@ -307,7 +308,7 @@
 				memory {
 					qcom,label = <0x18>;			/* HAB device 1 */
 					#address-cells = <0x2>;
-					base = <0x0 0xd5140000>;
+					allocate-base;
 				};
 			};
 
@@ -322,7 +323,7 @@
 				memory {
 					qcom,label = <0x19>;			/* HAB device 2 */
 					#address-cells = <0x2>;
-					base = <0x0 0xd5160000>;
+					allocate-base;
 				};
 			};
 
@@ -337,7 +338,7 @@
 				memory {
 					qcom,label = <0x1a>;			/* HAB device 3 */
 					#address-cells = <0x2>;
-					base = <0x0 0xd51e0000>;
+					allocate-base;
 				};
 			};
 
@@ -352,7 +353,7 @@
 				memory {
 					qcom,label = <0x1b>;			/* HAB device 4 */
 					#address-cells = <0x2>;
-					base = <0x0 0xd5280000>;
+					allocate-base;
 				};
 			};
 
@@ -367,7 +368,7 @@
 				memory {
 					qcom,label = <0x1c>;			/* HAB device 5 */
 					#address-cells = <0x2>;
-					base = <0x0 0xd52e0000>;
+					allocate-base;
 				};
 			};
 
@@ -380,9 +381,9 @@
 				dma-coherent;
 				dma_base = <0x0 0x240000>;
 				memory {
-					qcom,label = <0x1d>;			/* Input device */
+					qcom,label = <0x1d>;			/* Input device 0 */
 					#address-cells = <0x2>;
-					base = <0x0 0xd5340000>;
+					allocate-base;
 				};
 			};
 
@@ -397,7 +398,7 @@
 				memory {
 					qcom,label = <0x1e>;			/* SCMI device */
 					#address-cells = <0x2>;
-					base = <0x0 0xd5348000>;
+					allocate-base;
 				};
 			};
 
@@ -410,9 +411,39 @@
 				dma-coherent;
 				dma_base = <0x0 0x250000>;
 				memory {
-					qcom,label = <0x1f>;		/* Reserved devices */
+					qcom,label = <0x1f>;			/* Console device */
 					#address-cells = <0x2>;
-					base = <0x0 0xd5350000>;
+					allocate-base;
+				};
+			};
+
+			virtio-mmio@15 {
+				vdevice-type = "virtio-mmio";
+				generate = "/virtio-mmio";
+				peer-default;
+				vqs-num = <0x2>;
+				push-compatible = "virtio,mmio";
+				dma-coherent;
+				dma_base = <0x0 0x258000>;
+				memory {
+					qcom,label = <0x20>;			/* Input device 1 */
+					#address-cells = <0x2>;
+					allocate-base;
+				};
+			};
+
+			virtio-mmio@16 {
+				vdevice-type = "virtio-mmio";
+				generate = "/virtio-mmio";
+				peer-default;
+				vqs-num = <0x2>;
+				push-compatible = "virtio,mmio";
+				dma-coherent;
+				dma_base = <0x0 0x260000>;
+				memory {
+					qcom,label = <0x21>;		/* Reserved devices */
+					#address-cells = <0x2>;
+					allocate-base;
 				};
 			};
 
@@ -425,7 +456,7 @@
 				memory {
 					qcom,label = <0x12>;
 					#address-cells = <0x2>;
-					base = <0x0 0xd5400000>;
+					allocate-base;
 				};
 			};
 
@@ -450,7 +481,7 @@
 
 		android {
 			compatible = "android,firmware";
-			boot_devices = "20001000.virtio-mmio,20002000.virtio-mmio,20003000.virtio-mmio,20004000.virtio-mmio,20005000.virtio-mmio";
+			boot_devices = "70001000.virtio-mmio,70002000.virtio-mmio,70003000.virtio-mmio,70004000.virtio-mmio,70005000.virtio-mmio";
 
 			vbmeta {
 				compatible = "android,vbmeta";
@@ -483,12 +514,6 @@
 	gcc: clock-controller@100000 {
 		compatible = "qcom,dummycc";
 		clock-output-names = "gcc_clocks";
-		#clock-cells = <1>;
-		#reset-cells = <1>;
-	};
-
-	dummycc: qcom,dummycc {
-		compatible = "qcom,dummycc";
 		#clock-cells = <1>;
 		#reset-cells = <1>;
 	};
@@ -548,8 +573,7 @@
 		compatible = "qcom,msm-rng";
 		reg = <0x10dc000 0x1000>;
 		qcom,no-qrng-config;
-		clocks = <&dummycc RPMH_HWKM_CLK>;
-		clock-names = "km_clk_src";
+		qcom,no-clock-support;
 		status = "ok";
 	};
 
@@ -568,6 +592,11 @@
 		#iommu-cells = <2>;
 		qcom,use-3-lvl-tables;
 		dma-coherent;
+	};
+
+	dma_dev@0x0 {
+		compatible = "qcom,iommu-dma";
+		memory-region = <&system_cma>;
 	};
 };
 
