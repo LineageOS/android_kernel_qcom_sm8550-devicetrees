@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00fd0e94_573c668d",
+        "filename": "qcom/kalama-mtp.dtsi",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 22465
+      },
+      "writtenOn": "2025-02-16T22:02:47Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to hurt but I\u0027m not so sure about it.",
+      "revId": "ed14a00da5ce34a654f0452e20f0446615194944",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1487b81e_ab2842ac",
+        "filename": "qcom/pmk8550.dtsi",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 22465
+      },
+      "writtenOn": "2025-02-16T22:02:47Z",
+      "side": 1,
+      "message": "This makes my volume down key to behave as volume up.",
+      "revId": "ed14a00da5ce34a654f0452e20f0446615194944",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
