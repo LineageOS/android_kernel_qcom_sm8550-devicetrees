@@ -16,6 +16,24 @@
       "message": "Changes in this file /might/ be oneplus specific, as  @danimoral1001@gmail.com found out to break on his device.",
       "revId": "c534dce5eb5538bdc7387763cbb166fa8720dcae",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6066d861_8bc28ee6",
+        "filename": "qcom/kalama-pmic-overlay.dtsi",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-16T19:37:35Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "fa4b785e_79a15255",
+      "revId": "c534dce5eb5538bdc7387763cbb166fa8720dcae",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
