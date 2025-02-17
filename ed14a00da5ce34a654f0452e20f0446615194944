@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "20366571_e00ef3cf",
+        "filename": "qcom/kalama-mtp.dtsi",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-17T01:12:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00fd0e94_573c668d",
+      "revId": "ed14a00da5ce34a654f0452e20f0446615194944",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1487b81e_ab2842ac",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-02-16T22:02:47Z",
       "side": 1,
       "message": "This makes my volume down key to behave as volume up.",
+      "revId": "ed14a00da5ce34a654f0452e20f0446615194944",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5e73c04_523436aa",
+        "filename": "qcom/pmk8550.dtsi",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-17T01:12:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1487b81e_ab2842ac",
       "revId": "ed14a00da5ce34a654f0452e20f0446615194944",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
