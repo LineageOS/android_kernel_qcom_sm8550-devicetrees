@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "235035e2_a53a9cff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-17T18:27:03Z",
+      "side": 1,
+      "message": "Sooooo.... this became a much smaller change because I did this: https://review.lineageos.org/c/LineageOS/android_kernel_qcom_sm8550-devicetrees/+/419323",
+      "revId": "26e2c68a9e6df735710dd5c4b3d115971b80e3c4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
