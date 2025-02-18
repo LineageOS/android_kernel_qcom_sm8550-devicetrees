@@ -16,6 +16,24 @@
       "message": "I have already looked at kernel-devicetrees from Xiaomi and Asus and both are outdated. Where can we find Sony\u0027s?",
       "revId": "d71a967d00f556bde3e755d6cc24ca5105dee894",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e8198c3_b88c9a0b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31578
+      },
+      "writtenOn": "2025-02-18T00:41:58Z",
+      "side": 1,
+      "message": "https://github.com/sonyxperiadev/kernel-copyleft-dts/tree/67.0.A.1.xxx They only released A14, and I dont think it is up to date.",
+      "parentUuid": "d7296a44_cf053c5a",
+      "revId": "d71a967d00f556bde3e755d6cc24ca5105dee894",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
