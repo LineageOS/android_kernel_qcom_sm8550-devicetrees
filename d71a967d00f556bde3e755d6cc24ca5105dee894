@@ -34,6 +34,23 @@
       "parentUuid": "d7296a44_cf053c5a",
       "revId": "d71a967d00f556bde3e755d6cc24ca5105dee894",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f870727_5084c200",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31578
+      },
+      "writtenOn": "2025-02-18T08:43:15Z",
+      "side": 1,
+      "message": "seems ok on sony sm8550, I will test for more days before I vote v+1",
+      "revId": "d71a967d00f556bde3e755d6cc24ca5105dee894",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
