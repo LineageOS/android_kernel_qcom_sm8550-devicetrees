@@ -51,6 +51,23 @@
       "message": "seems ok on sony sm8550, I will test for more days before I vote v+1",
       "revId": "d71a967d00f556bde3e755d6cc24ca5105dee894",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "156cf7b3_2343bd2a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 22465
+      },
+      "writtenOn": "2025-02-19T18:36:28Z",
+      "side": 1,
+      "message": "Been using it for some time already and haven\u0027t found more issues.",
+      "revId": "d71a967d00f556bde3e755d6cc24ca5105dee894",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
