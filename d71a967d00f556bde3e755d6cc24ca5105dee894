@@ -68,6 +68,23 @@
       "message": "Been using it for some time already and haven\u0027t found more issues.",
       "revId": "d71a967d00f556bde3e755d6cc24ca5105dee894",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2143e4d_649da4dc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34167
+      },
+      "writtenOn": "2025-02-20T00:18:31Z",
+      "side": 1,
+      "message": "Build breakage occurred on Xperia 1 V.\nI don\u0027t know which one is better option, just also remove codes in kalama-sde-display-qrd.dtsi or just restore it.\n\nRef:\nhttps://github.com/someone5678/android_kernel_qcom_sm8550-devicetrees/commit/dee15b87c69422a3d74fab0380707cdb1e2efc77",
+      "revId": "d71a967d00f556bde3e755d6cc24ca5105dee894",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
