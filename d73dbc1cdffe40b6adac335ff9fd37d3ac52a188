@@ -16,6 +16,23 @@
       "message": "I\u0027m guessing this is just a Moto sm8550 issue as Moto uses one of the displays that got dropped, so odds are I\u0027ll have to just do a revert somewhere or something \n\nERROR: ufdt_overlay_do_fixups():Couldn\u0027t find \u0027dsi_sim_sec_hd_cmd\u0027 symbol in main dtb\nERROR: ufdt_overlay_apply():failed to perform fixups in overlay\nufdt_apply_overlay() returned null: bad input?",
       "revId": "d73dbc1cdffe40b6adac335ff9fd37d3ac52a188",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "668e8df6_e56ad3a3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-21T15:01:25Z",
+      "side": 1,
+      "message": "Honestly, the whole change seems like a oplus modification, rather than qcom. It doesn\u0027t make sense to remove the imports without actually deleting the dtsi files.",
+      "revId": "d73dbc1cdffe40b6adac335ff9fd37d3ac52a188",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
