@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08761a92_c40e9803",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2025-02-21T04:12:12Z",
+      "side": 1,
+      "message": "I\u0027m guessing this is just a Moto sm8550 issue as Moto uses one of the displays that got dropped, so odds are I\u0027ll have to just do a revert somewhere or something \n\nERROR: ufdt_overlay_do_fixups():Couldn\u0027t find \u0027dsi_sim_sec_hd_cmd\u0027 symbol in main dtb\nERROR: ufdt_overlay_apply():failed to perform fixups in overlay\nufdt_apply_overlay() returned null: bad input?",
+      "revId": "d73dbc1cdffe40b6adac335ff9fd37d3ac52a188",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
