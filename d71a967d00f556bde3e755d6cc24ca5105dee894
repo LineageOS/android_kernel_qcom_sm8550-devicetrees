@@ -103,6 +103,23 @@
       "parentUuid": "a2143e4d_649da4dc",
       "revId": "d71a967d00f556bde3e755d6cc24ca5105dee894",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64813c52_1fdef494",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34167
+      },
+      "writtenOn": "2025-02-21T15:43:18Z",
+      "side": 1,
+      "message": "Test: Build, boot, check device works on Xperia 1 V.",
+      "revId": "d71a967d00f556bde3e755d6cc24ca5105dee894",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
