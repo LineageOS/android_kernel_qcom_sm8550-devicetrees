@@ -33,6 +33,23 @@
       "message": "Can you all re-verify?",
       "revId": "7b26303dbf58bfebd7fe055df10b2f54e940382d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b4331af_ab25d76a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2025-02-23T14:53:56Z",
+      "side": 1,
+      "message": "I have just found out that AOSPA has even newer devicetrees with git history. Going to merge it later.",
+      "revId": "7b26303dbf58bfebd7fe055df10b2f54e940382d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
